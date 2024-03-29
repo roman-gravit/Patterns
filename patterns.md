@@ -15,7 +15,6 @@ Implementation:
   2. Singleton inside the object
 
 
-
 ###  2. Prototype
 
 Prototype is a creational design pattern that allows **cloning** objects without coupling to their specific classes.
@@ -24,7 +23,6 @@ Prototype is a creational design pattern that allows **cloning** objects without
     and create new objects by copying this prototype.
   - Co-opt one instance of a class for use as a breeder of all future instances.
   - The new operator considered harmful.
-
 
 
 ###  3. Builder
@@ -39,7 +37,6 @@ When to use:
   - If creation of the object is very complex and counstrutor became huge
 
 
-
 ###  4. Factory Method
 
 - Define an interface for creating an object, but let subclasses decide which class to instantiate. 
@@ -49,3 +46,12 @@ When to use:
 
 When to use:	
 - When you need to create several similar objects
+
+
+###  5. Abstract Factory
+
+Some kind of abtrsaction for factory and factory method. Its some kind of upper level above factory.
+
+- Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+- A hierarchy that encapsulates: many possible "platforms", and the construction of a suite of "products".
+- The new operator considered harmful.
