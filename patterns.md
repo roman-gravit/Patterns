@@ -32,4 +32,20 @@ Prototype is a creational design pattern that allows **cloning** objects without
 Construct complex objects step by step. The pattern allows you to produce different types and representations of an 
 object using the same construction code. 
 Separate the algorithm for interpreting (reading and parsing) a stored persistence mechanism from the algorithm for 
-building and representing one of many target products. 
+building and representing one of many target products.
+
+When to use:
+  - To create complex and big objects with complex states *Director* abstraction will rule several *Abstract Builders*
+  - If creation of the object is very complex and counstrutor became huge
+
+
+
+####  4. Factory Method
+
+- Define an interface for creating an object, but let subclasses decide which class to instantiate. 
+  Factory Method lets a class defer instantiation to subclasses.
+- The new operator considered harmful.
+- Defining a "virtual" constructor.
+
+When to use:	
+- When you need to create several similar objects
