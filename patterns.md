@@ -1,7 +1,7 @@
 ## Creational
 
 
-####  1. Singleton
+###  1. Singleton
 
 Ensure a class has only **one instance**, and provide a single global point of access to it and lazy initialization.
 
@@ -16,7 +16,7 @@ Implementation:
 
 
 
-####  2. Prototype
+###  2. Prototype
 
 Prototype is a creational design pattern that allows **cloning** objects without coupling to their specific classes.
 
@@ -27,7 +27,7 @@ Prototype is a creational design pattern that allows **cloning** objects without
 
 
 
-####  3. Builder
+###  3. Builder
 
 Construct complex objects step by step. The pattern allows you to produce different types and representations of an 
 object using the same construction code. 
@@ -40,7 +40,7 @@ When to use:
 
 
 
-####  4. Factory Method
+###  4. Factory Method
 
 - Define an interface for creating an object, but let subclasses decide which class to instantiate. 
   Factory Method lets a class defer instantiation to subclasses.
