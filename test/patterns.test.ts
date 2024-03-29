@@ -1,5 +1,6 @@
 import { SingletonGlobal, SingletonInst } from "../creational/singleton";
 import { TeslaCarPrototype } from "../creational/prototype";
+import { CarBuilder } from "../creational/builder"; 
 
 test("SingletonGlobal",  () => {
 	const singleton1 = new SingletonGlobal();
@@ -24,7 +25,9 @@ test("SingletonInst",  () => {
 	car2.interior = "green";
 }); 
 
-
-
+test("SingletonInst",  () => {
+	const my_car = new CarBuilder().AddAutoPilot(true).AddParkTronic(true).build();
+	console.log(my_car);
+}); 
 
 
