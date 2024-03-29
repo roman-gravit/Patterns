@@ -1,9 +1,10 @@
 ## Creational
 
 
-####  1.Singleton
+####  1. Singleton
 
-Ensure a class has only **one instance**, and provide a single global point of access to it.
+Ensure a class has only **one instance**, and provide a single global point of access to it 
+and lazy initialization.
 
 When to use examples:
   - basket in the internet-shop
@@ -13,3 +14,14 @@ When to use examples:
 Implementation: 
   1. Create global variable and put it to the module.
   2. Singleton inside the object
+
+
+####  2. Prototype
+
+Prototype is a creational design pattern that allows **cloning** objects without coupling to their specific classes.
+
+  - Specify the kinds of objects to create using a prototypical instance, 
+    and create new objects by copying this prototype.
+  - Co-opt one instance of a class for use as a breeder of all future instances.
+  - The new operator considered harmful.
+

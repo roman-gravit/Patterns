@@ -1,5 +1,5 @@
 import { SingletonGlobal, SingletonInst } from "../creational/singleton";
-
+import { TeslaCarPrototype } from "../creational/prototype";
 
 test("SingletonGlobal",  () => {
 	const singleton1 = new SingletonGlobal();
@@ -12,3 +12,19 @@ test("SingletonInst",  () => {
 	const singleton2 = SingletonInst.GetInstance();
 	expect(singleton2).toEqual(singleton1);
 }); 
+
+test("SingletonInst",  () => {
+	const proto_car = new TeslaCarPrototype(10000, "black", true);
+
+	// Cloning from proto we create exact models 
+	const car1 = proto_car.clone();
+	car1.price = 110000;
+
+	const car2 = proto_car.clone();
+	car2.interior = "green";
+}); 
+
+
+
+
+
