@@ -66,7 +66,7 @@ Implementation:
 
 ###  1. Decorator
 
-You want to add behavior or state to individual objects at run-time. 
+You want to **add behavior** or state to individual objects at **run-time**. 
 Inheritance is not feasible because it is static and applies to an entire class
 The Decorator attaches additional responsibilities to an object dynamically.
 
@@ -79,7 +79,7 @@ Implementation:
 
 ###  2. Adapter
 
-Allows objects with INCOMPATIBLE interfaces to COMMUNICATE.
+Allows objects with **incompatible** interfaces to **communicate**.
 Converts the interface of one object so that another object can understand it.
 
 Implementation:
@@ -91,8 +91,8 @@ Implementation:
 
 ### 3. Facade
 
-A segment of the client community needs a SIMPLIFIED interface to the overall functionality 
-of a COMPLEX subsystem.
+A segment of the client community needs a **simplified** interface to the overall functionality 
+of a **complex** subsystem.
 Facade encapsulating a complex subsystem within a single interface object.
 
 Implementation:
@@ -127,8 +127,8 @@ Implementation:
 
 ### 5. Composite (Object Tree)
 
-Composite is a structural design pattern that lets you compose objects into tree structures 
-and then work with these structures as if they were individual objects.
+Composite is a structural design pattern that lets you **compose objects into tree structures**
+and then work with these structures as if they were individual **objects**.
 
 NOTE: Using the Composite pattern makes sense only when the core model of your app can be represented as a tree.
 
@@ -146,10 +146,13 @@ Implementation:
 Use this pattern whenever you have "composites that contain components, each of which could be a composite".
 
 
+
 ## Behavioral
 
+
 ### 1. Memento
-Pattern help to store and restore and previous state of the object 
+
+Allows **making snapshots** of an object’s state and **restoring** it in future.
 
 Problem:
   Need to restore an object back to its previous state (e.g. "undo" or "rollback" operations).
@@ -160,3 +163,40 @@ Problem:
   - A magic cookie that encapsulates a "check point" capability.
   
   - Promote undo or rollback to full object status.
+
+
+### 2. Iterator
+
+Allows sequential **traversal** through a complex data structure without exposing its internal details.
+
+  - Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+
+  - Polymorphic traversal
+
+Identification: Iterator is easy to recognize by the navigation methods (such as next, previous and others). 
+Client code that uses iterators might not have direct access to the collection being traversed.
+
+
+### 3. Visitor
+
+Allows **adding new behaviors** to existing class hierarchy without altering any existing code.
+
+  - Represent an operation to be performed on the elements of an object structure. 
+    Visitor lets you define a new operation without changing the classes of the elements on which it operates.
+
+  - The classic technique for recovering lost type information.
+
+  - Do the right thing based on the type of two objects.
+
+  - Double dispatch
+
+
+### 4. Command
+
+Converts requests or simple operations into objects. The conversion allows deferred or remote execution of commands, storing command history, etc.
+
+  - Encapsulate a request as an object, thereby letting you parametrize clients with different requests, queue or log requests, and support undoable operations.
+
+  - Promote "invocation of a method on an object" to full object status
+
+  - An object-oriented callback

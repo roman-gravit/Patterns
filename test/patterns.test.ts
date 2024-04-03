@@ -9,6 +9,79 @@ import { RealSubject, ClientCode, Proxy1 } from "../structural/proxy";
 import { Leaf, Composite, ClientCode as ClientCode_Comp } from "../structural/composite2";
 
 import { Caretaker, creator } from "../behavioral/memento";
+import { Iterator} from "../behavioral/iterator";
+import { clientCode, ConcreteComponentA, ConcreteComponentB, ConcreteVisitor1, ConcreteVisitor2 } from "../behavioral/visitor";
+import { Engine, Driver, OnStartCommand, OnSwitchOffCommand } from "../behavioral/command";
+
+test("Command",  () => {
+
+	const engine = new Engine();
+	expect(engine.getState()).toEqual(false);
+	
+	// Start
+	const on_start_command = new OnStartCommand(engine);
+	let driver = new Driver(on_start_command);
+	driver.execute();
+	expect(engine.getState()).toEqual(true);
+	
+
+	// Stop
+	const on_stop_command = new OnSwitchOffCommand(engine);
+	driver = new Driver(on_stop_command);
+	driver.execute();
+	expect(engine.getState()).toEqual(false);
+});
+
+test("Visitor",  () => {
+	const components = [
+		new ConcreteComponentA(),
+		new ConcreteComponentB(),
+	];
+
+	console.log('The client code works with all visitors via the base Visitor interface:');
+	const visitor1 = new ConcreteVisitor1();
+	clientCode(components, visitor1);
+	console.log('');
+
+	console.log('It allows the same client code to work with different types of visitors:');
+	const visitor2 = new ConcreteVisitor2();
+	clientCode(components, visitor2);
+
+});
+
+test("Iterator",  () => {
+	const components = [
+		new ConcreteComponentA(),
+		new ConcreteComponentB(),
+	];
+
+	console.log('The client code works with all visitors via the base Visitor interface:');
+	const visitor1 = new ConcreteVisitor1();
+	clientCode(components, visitor1);
+	console.log('');
+
+	console.log('It allows the same client code to work with different types of visitors:');
+	const visitor2 = new ConcreteVisitor2();
+	clientCode(components, visitor2);
+
+});
+
+test("Iterator",  () => {
+
+	const collection = new Iterator(["1", "2", "3", "4"]);
+
+	expect(collection.next()).toEqual("1");
+	expect(collection.hasNext()).toEqual(true);
+
+	expect(collection.next()).toEqual("2");
+	expect(collection.hasNext()).toEqual(true);
+
+	expect(collection.next()).toEqual("3");
+	expect(collection.hasNext()).toEqual(true);
+
+	expect(collection.next()).toEqual("4");
+	expect(collection.hasNext()).toEqual(false);
+});
 
 test("Caretaker",  () => {
 
