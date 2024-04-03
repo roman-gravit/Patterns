@@ -8,6 +8,20 @@ import { Auto, Engine2, EngineV8, EngineV8Adapter } from "../structural/adapter"
 import { RealSubject, ClientCode, Proxy1 } from "../structural/proxy"; 
 import { Leaf, Composite, ClientCode as ClientCode_Comp } from "../structural/composite2";
 
+import { Caretaker, creator } from "../behavioral/memento";
+
+test("Caretaker",  () => {
+
+	const careTaker = new Caretaker();
+
+	careTaker.addMemento(creator.save("Hello"));
+	careTaker.addMemento(creator.save("Hello world!"));
+	careTaker.addMemento(creator.save("Hello world!!!"));
+
+	expect(creator.restore(careTaker.getMemento(1))).toEqual("Hello world!");
+
+});
+
 test("Composite",  () => {
 		/**
 		 * This way the client code can support the simple leaf components...

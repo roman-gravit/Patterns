@@ -126,7 +126,7 @@ Implementation:
 
 
 ### 5. Composite (Object Tree)
------------------------------
+
 Composite is a structural design pattern that lets you compose objects into tree structures 
 and then work with these structures as if they were individual objects.
 
@@ -144,3 +144,19 @@ Implementation:
  - Each Composite object "couples" itself only to the abstract type Component as it manages its "children".
 
 Use this pattern whenever you have "composites that contain components, each of which could be a composite".
+
+
+## Behavioral
+
+### 1. Memento
+Pattern help to store and restore and previous state of the object 
+
+Problem:
+  Need to restore an object back to its previous state (e.g. "undo" or "rollback" operations).
+
+  - Without violating encapsulation, capture and externalize an object's internal state so that the object 
+    can be returned to this state later.
+  
+  - A magic cookie that encapsulates a "check point" capability.
+  
+  - Promote undo or rollback to full object status.
