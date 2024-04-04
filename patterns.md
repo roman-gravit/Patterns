@@ -214,3 +214,14 @@ Converts requests or simple operations into objects. The conversion allows defer
 
   Usage examples: 
   The State pattern is commonly used in TypeScript to convert massive switch-base state machines into objects.
+
+
+  ### 6. Observer
+
+  Allows some objects to notify other objects about changes in their state.
+
+   - Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+
+   - Encapsulate the core (or common or engine) components in a Subject abstraction, and the variable (or optional or user interface) components in an Observer hierarchy.
+
+  - The "View" part of Model-View-Controller.

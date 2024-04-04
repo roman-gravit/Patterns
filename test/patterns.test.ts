@@ -13,6 +13,21 @@ import { Iterator} from "../behavioral/iterator";
 import { clientCode, ConcreteComponentA, ConcreteComponentB, ConcreteVisitor1, ConcreteVisitor2 } from "../behavioral/visitor";
 import { Engine, Driver, OnStartCommand, OnSwitchOffCommand } from "../behavioral/command";
 import { Order } from "../behavioral/state";
+import { Stock, Investor } from "../behavioral/observer";
+
+test("Observer",  () => {
+
+	const stock = new Stock(1500);
+	
+	const investor1 = new Investor('Alice');
+	const investor2 = new Investor('Bob');
+	
+	stock.AddObserver(investor1);
+	stock.AddObserver(investor2);
+	
+	stock.SetPrice(1550);
+});
+
 
 test("State",  () => {
 
