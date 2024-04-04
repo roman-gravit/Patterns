@@ -202,7 +202,7 @@ Converts requests or simple operations into objects. The conversion allows defer
   - An object-oriented callback
 
 
-  ### 5. State
+### 5. State
 
   Allows an object to change the behavior when its internal state changes.
 
@@ -216,12 +216,26 @@ Converts requests or simple operations into objects. The conversion allows defer
   The State pattern is commonly used in TypeScript to convert massive switch-base state machines into objects.
 
 
-  ### 6. Observer
+### 6. Observer
 
-  Allows some objects to notify other objects about changes in their state.
+Allows some objects to notify other objects about changes in their state.
 
    - Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
 
    - Encapsulate the core (or common or engine) components in a Subject abstraction, and the variable (or optional or user interface) components in an Observer hierarchy.
 
   - The "View" part of Model-View-Controller.
+
+
+### 7. Mediator
+
+Reduces coupling between components of a program by making them communicate indirectly, through a special mediator object OR
+
+simplify communication between objects, making them easier to maintain and extend.
+
+  - Define an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, 
+    and it lets you vary their interaction independently.
+
+  - Design an intermediary to decouple many peers.
+
+  - Promote the many-to-many relationships between interacting peers to "full object status".

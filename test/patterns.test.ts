@@ -14,7 +14,22 @@ import { clientCode, ConcreteComponentA, ConcreteComponentB, ConcreteVisitor1, C
 import { Engine, Driver, OnStartCommand, OnSwitchOffCommand } from "../behavioral/command";
 import { Order } from "../behavioral/state";
 import { Stock, Investor } from "../behavioral/observer";
+import { OnlineAuctioneer, Buyer } from "../behavioral/mediator";
 
+test("Mediator",  () => {
+
+	const auctioneer = new OnlineAuctioneer();
+
+	const bob = new Buyer("Bob", auctioneer);
+	const alice = new Buyer("Alice", auctioneer);
+	const mike = new Buyer("Mike", auctioneer);
+
+	// other buyers will receive notification about bids
+	bob.makeBid(100); 
+	alice.makeBid(150);
+	mike.makeBid(150);
+
+});
 test("Observer",  () => {
 
 	const stock = new Stock(1500);
