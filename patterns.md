@@ -200,3 +200,17 @@ Converts requests or simple operations into objects. The conversion allows defer
   - Promote "invocation of a method on an object" to full object status
 
   - An object-oriented callback
+
+
+  ### 5. State
+
+  Allows an object to change the behavior when its internal state changes.
+
+  - Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
+
+  - An object-oriented state machine
+
+  - wrapper + polymorphic wrappee + collaboration
+
+  Usage examples: 
+  The State pattern is commonly used in TypeScript to convert massive switch-base state machines into objects.

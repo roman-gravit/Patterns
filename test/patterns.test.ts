@@ -12,6 +12,19 @@ import { Caretaker, creator } from "../behavioral/memento";
 import { Iterator} from "../behavioral/iterator";
 import { clientCode, ConcreteComponentA, ConcreteComponentB, ConcreteVisitor1, ConcreteVisitor2 } from "../behavioral/visitor";
 import { Engine, Driver, OnStartCommand, OnSwitchOffCommand } from "../behavioral/command";
+import { Order } from "../behavioral/state";
+
+test("State",  () => {
+
+	const order = new Order();
+	expect(order.state.GetStatus()).toEqual("WaitingForPayment");
+
+	order.NextState();
+	expect(order.state.GetStatus()).toEqual("Shipping");
+
+	order.NextState();
+	expect(order.state.GetStatus()).toEqual("Delivered");
+});
 
 test("Command",  () => {
 
