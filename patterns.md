@@ -158,6 +158,17 @@ This division paves the way for the independent evolution of structures, leading
   - Beyond encapsulation, to insulation
 
 
+### 7. Flyweight (cache)
+
+Flyweight is a structural design pattern that lets you fit more objects into the available amount of RAM 
+by sharing common parts of state between multiple objects instead of keeping all of the data in each object.
+
+The Flyweight pattern describes how to share objects to allow their use at fine granularity without 
+prohibitive cost. Each "flyweight" object is divided into two pieces: the state-dependent (extrinsic) part, 
+and the state-independent (intrinsic) part. Intrinsic state is stored (shared) in the Flyweight object. 
+Extrinsic state is stored or computed by client objects, and passed to the Flyweight when its operations are invoked.
+
+
 ## Behavioral
 
 
@@ -250,3 +261,13 @@ simplify communication between objects, making them easier to maintain and exten
   - Design an intermediary to decouple many peers.
 
   - Promote the many-to-many relationships between interacting peers to "full object status".
+
+
+### 8. Template method
+
+Defines the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure.
+
+ - Define the skeleton of an algorithm in an operation, deferring some steps to client subclasses. 
+   Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
+
+ - Base class declares algorithm 'placeholders', and derived classes implement the placeholders.

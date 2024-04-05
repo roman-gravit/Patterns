@@ -16,6 +16,16 @@ import { Engine, Driver, OnStartCommand, OnSwitchOffCommand } from "../behaviora
 import { Order } from "../behavioral/state";
 import { Stock, Investor } from "../behavioral/observer";
 import { OnlineAuctioneer, Buyer } from "../behavioral/mediator";
+import { TeslaBuilder, BmwBuilder } from "../behavioral/template-method";
+
+test("TemplateMethod",  () => {
+
+	const teslaBuilder = new TeslaBuilder();
+	teslaBuilder.templateMethod();
+
+	const bmwBuilder = new BmwBuilder();
+	bmwBuilder.templateMethod();
+});
 
 test("Bridge",  () => {
 
