@@ -7,6 +7,7 @@ import { CarWithAutoPilot, TeslaCar as TeslaCar_Decorator, BmwCar as BmwCar_Deco
 import { Auto, Engine2, EngineV8, EngineV8Adapter } from "../structural/adapter"; 
 import { RealSubject, ClientCode, Proxy1 } from "../structural/proxy"; 
 import { Leaf, Composite, ClientCode as ClientCode_Comp } from "../structural/composite2";
+import { OnlineStoreCheckout, PayPal, Stripe } from "../structural/bridge";
 
 import { Caretaker, creator } from "../behavioral/memento";
 import { Iterator} from "../behavioral/iterator";
@@ -15,6 +16,21 @@ import { Engine, Driver, OnStartCommand, OnSwitchOffCommand } from "../behaviora
 import { Order } from "../behavioral/state";
 import { Stock, Investor } from "../behavioral/observer";
 import { OnlineAuctioneer, Buyer } from "../behavioral/mediator";
+
+test("Bridge",  () => {
+
+	const payPal = new PayPal();
+	const stripe = new Stripe();
+
+	const checkoutWithPayPal = new OnlineStoreCheckout(payPal);
+	const result = checkoutWithPayPal.checkout(100);
+	expect(result).toEqual("PayPal: $100");
+
+	const checkoutWithStripe = new OnlineStoreCheckout(stripe);
+	const result2 = checkoutWithStripe.checkout(150);
+	expect(result2).toEqual("Stripe: $150");
+
+});
 
 test("Mediator",  () => {
 
@@ -30,6 +46,7 @@ test("Mediator",  () => {
 	mike.makeBid(150);
 
 });
+
 test("Observer",  () => {
 
 	const stock = new Stock(1500);

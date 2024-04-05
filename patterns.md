@@ -146,6 +146,17 @@ Implementation:
 Use this pattern whenever you have "composites that contain components, each of which could be a composite".
 
 
+### 6. Bridge
+
+The Bridge Pattern aims to separate the abstraction from its implementation, enabling both to develop separately. 
+This division paves the way for the independent evolution of structures, leading to cleaner, more modular code.
+
+  - Decouple an abstraction from its implementation so that the two can vary independently.
+
+  - Publish interface in an inheritance hierarchy, and bury implementation in its own inheritance hierarchy.
+
+  - Beyond encapsulation, to insulation
+
 
 ## Behavioral
 
