@@ -18,6 +18,24 @@ import { Stock, Investor } from "../behavioral/observer";
 import { OnlineAuctioneer, Buyer } from "../behavioral/mediator";
 import { TeslaBuilder, BmwBuilder } from "../behavioral/template-method";
 import { PercentageDiscount, FlatDiscount, NoDiscount, Product } from "../behavioral/strategy";
+import { Account, Master, Paypal, Qiwi } from "../behavioral/chain";
+
+test("Chain",  () => {
+
+	const master = new Master(100);
+	const paypal = new Paypal(200);
+	const qiwi = new Qiwi(500);
+
+	// define chain
+	master.setNext(paypal);
+	paypal.setNext(qiwi);
+
+	master.pay(433);
+	// cannot pay master
+	// cannot pay paypal
+	// pay with qiwi
+
+});
 
 test("Strategy",  () => {
 
@@ -86,7 +104,6 @@ test("Observer",  () => {
 	stock.SetPrice(1550);
 });
 
-
 test("State",  () => {
 
 	const order = new Order();
@@ -136,23 +153,6 @@ test("Visitor",  () => {
 });
 
 test("Iterator",  () => {
-	const components = [
-		new ConcreteComponentA(),
-		new ConcreteComponentB(),
-	];
-
-	console.log('The client code works with all visitors via the base Visitor interface:');
-	const visitor1 = new ConcreteVisitor1();
-	clientCode(components, visitor1);
-	console.log('');
-
-	console.log('It allows the same client code to work with different types of visitors:');
-	const visitor2 = new ConcreteVisitor2();
-	clientCode(components, visitor2);
-
-});
-
-test("Iterator",  () => {
 
 	const collection = new Iterator(["1", "2", "3", "4"]);
 
@@ -169,7 +169,7 @@ test("Iterator",  () => {
 	expect(collection.hasNext()).toEqual(false);
 });
 
-test("Caretaker",  () => {
+test("Memento",  () => {
 
 	const careTaker = new Caretaker();
 

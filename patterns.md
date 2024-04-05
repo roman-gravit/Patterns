@@ -286,3 +286,15 @@ This behavioral pattern is all about letting you decide the course of action or 
  The Strategy Pattern defines a set of algorithms, encapsulates each one, and makes them interchangeable. 
  In simple words, it allows the client to choose the algorithm from a family of algorithms and then lets 
  you swap one algorithm or strategy for another without altering the code that uses the strategy.
+
+
+ ### 10. Chain of Responsibility 
+ 
+ Is behavioral design pattern that allows passing request along the chain of potential handlers until one of them handles request.
+
+  - Avoid coupling the sender of a request to its receiver by giving more than one object a 
+    chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
+
+  - Launch-and-leave requests with a single processing pipeline that contains many possible handlers.
+
+  - An object-oriented linked list with recursive traversal.
