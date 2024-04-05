@@ -1,6 +1,5 @@
 ## Creational
 
-
 ###  1. Singleton
 
 Ensure a class has only **one instance**, and provide a single global point of access to it and lazy initialization.
@@ -60,9 +59,15 @@ Implementation:
  - The new operator considered harmful.
 
 
+### 6. Object Pool
+
+Object pooling can offer a significant performance boost; it is most effective in situations where 
+the cost of initializing a class instance is high, the rate of instantiation of a class is high, 
+and the number of instantiations in use at any one time is low.
+
+
 
 ## Structural
-
 
 ###  1. Decorator
 
@@ -169,8 +174,8 @@ and the state-independent (intrinsic) part. Intrinsic state is stored (shared) i
 Extrinsic state is stored or computed by client objects, and passed to the Flyweight when its operations are invoked.
 
 
-## Behavioral
 
+## Behavioral
 
 ### 1. Memento
 
