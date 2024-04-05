@@ -17,6 +17,22 @@ import { Order } from "../behavioral/state";
 import { Stock, Investor } from "../behavioral/observer";
 import { OnlineAuctioneer, Buyer } from "../behavioral/mediator";
 import { TeslaBuilder, BmwBuilder } from "../behavioral/template-method";
+import { PercentageDiscount, FlatDiscount, NoDiscount, Product } from "../behavioral/strategy";
+
+test("Strategy",  () => {
+
+	const product = new Product(100, new NoDiscount());
+	const result1 = product.getPriceAfterDiscount();
+	expect(result1).toEqual(100);
+
+	product.setDiscountStrategy(new PercentageDiscount(10));
+	const result2 = product.getPriceAfterDiscount();
+	expect(result2).toEqual(90);
+
+	product.setDiscountStrategy(new FlatDiscount(20));
+	const result3 = product.getPriceAfterDiscount();
+	expect(result3).toEqual(80);
+});
 
 test("TemplateMethod",  () => {
 

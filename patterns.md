@@ -271,3 +271,18 @@ Defines the skeleton of an algorithm in the superclass but lets subclasses overr
    Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
 
  - Base class declares algorithm 'placeholders', and derived classes implement the placeholders.
+
+
+### 9. Strategy
+
+Turns a set of behaviors into objects and makes them interchangeable inside original context object.
+This behavioral pattern is all about letting you decide the course of action or strategy at runtime.
+
+ - Define a family of algorithms, encapsulate each one, and make them interchangeable. 
+   Strategy lets the algorithm vary independently from the clients that use it.
+
+ - Capture the abstraction in an interface, bury implementation details in derived classes.
+
+ The Strategy Pattern defines a set of algorithms, encapsulates each one, and makes them interchangeable. 
+ In simple words, it allows the client to choose the algorithm from a family of algorithms and then lets 
+ you swap one algorithm or strategy for another without altering the code that uses the strategy.
